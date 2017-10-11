@@ -8,19 +8,18 @@ namespace ToDoList.Models
     private int _id;
     private static List<Task> _instances = new List<Task> {};
 
-    //this is the constructor
-    public Task (string description)
+    public Task(string description)
     {
-        _description = description;
-        _instances.Add(this);
-        _id = _instances.Count;
+      _description = description;
+      _instances.Add(this);
+      _id = _instances.Count;
     }
-
 
     public string GetDescription()
     {
       return _description;
     }
+
     public void SetDescription(string newDescription)
     {
       _description = newDescription;
@@ -33,10 +32,6 @@ namespace ToDoList.Models
     {
       return _instances;
     }
-    public void Save()
-    {
-      _instances.Add(_description);
-    }
     public static void ClearAll()
     {
       _instances.Clear();
@@ -45,4 +40,5 @@ namespace ToDoList.Models
     {
       return _instances[searchId-1];
     }
+  }
 }
